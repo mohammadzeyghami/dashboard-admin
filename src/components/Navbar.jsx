@@ -44,8 +44,7 @@ const Navbar = () => {
           icon={<FiShoppingCart />}
           customFunc={() => handelClick("cart")}
         />
-      </div>
-      <div className="flex">
+
         <NavButton
           dotColor="#03c9d7"
           color="blue"
@@ -53,6 +52,29 @@ const Navbar = () => {
           icon={<BsChatLeft />}
           customFunc={() => handelClick("chat")}
         />
+
+        <NavButton
+          dotColor="#03c9d7"
+          color="blue"
+          title="Notifications"
+          icon={<RiNotification3Line />}
+          customFunc={() => handelClick("notification")}
+        />
+        <TooltipComponent content="Profile" position="BottomCenter">
+          <div
+            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            onClick={() => handelClick("userProfile")}
+          >
+            <img src={avatar} className="rounded-full w-8 h-8" />
+            <p>
+              <span className="text-gray-400 text-14">Hi, </span>{" "}
+              <span className="text-gray-400 font-bold ml-1 text-14">
+                Mohammad
+              </span>
+            </p>
+            <MdKeyboardArrowDown className="text-gray-400 text-14" />
+          </div>
+        </TooltipComponent>
       </div>
     </div>
   );
