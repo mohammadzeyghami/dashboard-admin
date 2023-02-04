@@ -13,7 +13,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
       type="button"
-      onClick={customFunc}
+      onClick={() => customFunc()}
       style={{ color }}
       className="relative text-xl rounded-full p-3 hover:bg-light-gray"
     >
@@ -28,7 +28,15 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const {
+    currentColor,
+    activeMenu,
+    setActiveMenu,
+    handleClick,
+    isClicked,
+    setScreenSize,
+    screenSize,
+  } = useStateContext();
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
@@ -40,30 +48,28 @@ const Navbar = () => {
       <div className="flex">
         <NavButton
           title="Cart"
-          color="blue"
+          customFunc={() => handleClick("cart")}
+          color={currentColor}
           icon={<FiShoppingCart />}
-          customFunc={() => handelClick("cart")}
         />
-
         <NavButton
-          dotColor="#03c9d7"
-          color="blue"
           title="Chat"
+          dotColor="#03C9D7"
+          customFunc={() => handleClick("chat")}
+          color={currentColor}
           icon={<BsChatLeft />}
-          customFunc={() => handelClick("chat")}
         />
-
         <NavButton
-          dotColor="#03c9d7"
-          color="blue"
-          title="Notifications"
+          title="Notification"
+          dotColor="rgb(254, 201, 15)"
+          customFunc={() => handleClick("notification")}
+          color={currentColor}
           icon={<RiNotification3Line />}
-          customFunc={() => handelClick("notification")}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => handelClick("userProfile")}
+            onClick={() => handleClick("userProfile")}
           >
             <img src={avatar} className="rounded-full w-8 h-8" />
             <p>
@@ -75,6 +81,10 @@ const Navbar = () => {
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
         </TooltipComponent>
+        {isClicked.cart && <Cart />}
+        {isClicked.chat && <Chat />}
+        {isClicked.notification && <Notification />}
+        {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
   );
