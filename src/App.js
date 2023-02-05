@@ -65,7 +65,7 @@ function App() {
               <Route path="/EComerce" element={<Ecommerce />} />
               {/* {pages} */}
               <Route path="/orders" element={<Orders />} />
-              <Route path="/empoloyees" element={<Employees />} />
+              <Route path="/employees" element={<Employees />} />
               <Route path="/customers" element={<Customers />} />
               {/* {Apps} */}
               <Route path="/kanban" element={<Kanban />} />
