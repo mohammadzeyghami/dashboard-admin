@@ -62,7 +62,7 @@ function App() {
             <Routes>
               {/* {dashboard} */}
               <Route path="/" element={<Ecommerce />} />
-              <Route path="/EComerce" element={<Ecommerce />} />
+              <Route path="/ECommerce" element={<Ecommerce />} />
               {/* {pages} */}
               <Route path="/orders" element={<Orders />} />
               <Route path="/employees" element={<Employees />} />
@@ -70,7 +70,7 @@ function App() {
               {/* {Apps} */}
               <Route path="/kanban" element={<Kanban />} />
               <Route path="/editor" element={<Editor />} />
-              <Route path="/calender" element={<Calendar />} />
+              <Route path="/calendar" element={<Calendar />} />
               <Route path="/color-picker" element={<ColorPicker />} />
               {/* {charts} */}
               <Route path="/line" element={<Line />} />
