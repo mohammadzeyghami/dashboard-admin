@@ -16,8 +16,8 @@ const Ecommerce = () => {
   const { currentColor } = useStateContext();
   return (
     <div className="mt-12">
-      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
-        <div className="bg-white flex min-w-[600px] justify-between items-center dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80  m-3">
+      <div className="flex flex-col flex-wrap lg:flex-nowrap justify-center ">
+        <div className="bg-white flex min-w-[600px] mx-auto rounded-2xl items-center dark:text-gray-200 dark:bg-secondary-dark-bg h-44  w-[80%]  m-3">
           <div className="flex flex-col  justify-center items-center p-8 pt-9 ">
             <div className="flex flex-col">
               <div>
@@ -38,10 +38,10 @@ const Ecommerce = () => {
           <img
             src={topImage}
             alt="top"
-            className="object-cover w-full h-full  "
+            className="object-cover w-full h-full rounded-tr-2xl rounded-br-2xl  "
           />
         </div>
-        <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
+        <div className="flex m-3 mx-auto flex-wrap max-w-[600px] justify-center gap-1 items-center">
           {earningData.map((item) => (
             <div
               key={item.title}
@@ -112,7 +112,7 @@ const Ecommerce = () => {
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={currentColor}
                 />
               </div>
               <div className="mt-10">
