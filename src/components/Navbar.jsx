@@ -54,7 +54,7 @@ const Navbar = () => {
     <div className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
         title="Menu"
-        color="blue"
+        color={currentColor}
         icon={<AiOutlineMenu />}
         customFunc={() => setActiveMenu((pervActiveMenu) => !pervActiveMenu)}
       />

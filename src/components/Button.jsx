@@ -4,7 +4,8 @@ const Button = ({ bgColor, color, size, text, borderRadius }) => {
   return (
     <button
       type="button"
-      className={`bg-[${bgColor}] text-[${color}] rounded-${borderRadius} text-[${size}] p-3 hover:drop-shadow-xl `}
+      style={{ backgroundColor: bgColor }}
+      className={`text-[${color}]  rounded-xl text-[${size}] p-3 hover:drop-shadow-xl `}
     >
       {text}
     </button>
