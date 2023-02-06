@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -8,16 +7,10 @@ import {
   Orders,
   Calendar,
   Employees,
-  Stacked,
-  Pyramid,
   Customers,
   Kanban,
   Area,
-  Bar,
-  Pie,
-  Financial,
   ColorPicker,
-  ColorMapping,
   Editor,
   Line,
 } from "./pages";
@@ -83,12 +76,6 @@ function App() {
               {/* {charts} */}
               <Route path="/line" element={<Line />} />
               <Route path="/area" element={<Area />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/Financial" element={<Financial />} />
-              <Route path="/color-mapping" element={<Color-mapping />} />
-              <Route path="/Pyramid" element={<Pyramid />} />
-              <Route path="/Stacked" element={<Stacked />} />
             </Routes>
           </div>
         </div>
