@@ -12,6 +12,7 @@ import {
 } from "@syncfusion/ej2-react-charts";
 import {
   lineCustomSerie,
+  lineCustomSeries,
   LinePrimaryAxis,
   LinePrimaryXAxis,
 } from "../../data/dummy";
@@ -19,6 +20,11 @@ const LineChart = () => {
   return (
     <ChartComponent>
       <Inject services={[LineSeries, DateTime, Legend, Tooltip, DateTime]} />
+      <SeriesCollectionDirective>
+        {lineCustomSeries.map((item, index) => (
+          <SeriesDirective key={index} {...item} />
+        ))}
+      </SeriesCollectionDirective>
     </ChartComponent>
   );
 };
