@@ -32,12 +32,13 @@ const Sidebar = () => {
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
+                style={{ color: currentColor }}
                 onClick={() => {
                   setActiveMenu((pervActiveMenu) => {
                     !pervActiveMenu;
                   });
                 }}
-                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block "
+                className="text-xl rounded-full p-3 hover:bg-light-gray m-4 block "
               >
                 <MdOutlineCancel />
               </button>
